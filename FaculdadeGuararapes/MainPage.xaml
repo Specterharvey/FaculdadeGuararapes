@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FaculdadeGuararapes.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Background="#FF30DABB">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <Image Source="/Images/T.png" Height="170" Width="170" VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            
+            <TextBlock Text="Faculdade dos Guararapes"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="Gray"
+                       FontSize="25" FontFamily="Segoe WP Light"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel Grid.Row="1" Margin="12,17,0,28">
+            <!--Title-->
+
+            <!--UserName-->
+            <TextBlock Text="Usuário" Foreground="Black"  FontSize="25" Margin="9,0,0,0" FontFamily="Segoe WP Light"/>
+            <TextBox  BorderBrush="LightGray"  Name="UserName" />
+
+            <!--Password-->
+            <TextBlock  Foreground="Black" Text="Senha" Margin="9,-7,0,0" FontSize="25" FontFamily="Segoe WP Light"/>
+            <PasswordBox BorderBrush="LightGray" Name="PassWord" />
+
+            <!--Login Button-->
+            <Button Content="Login" Background="#FF1866A8" Name="Login" Click="Login_Click" />
+            <TextBlock></TextBlock>
+            <ProgressBar x:Name="Progress" Grid.Row="1"   Foreground="#FF1866A8"/>
+
+            <!--  Registration Button-->
+        </StackPanel>
+
+
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar BackgroundColor="#FF1866A8" Mode="Default" Opacity="1.0" IsMenuEnabled="True" IsVisible="True">
+
+            <shell:ApplicationBarIconButton Click="sobre" IconUri="/images/about.png" Text="sobre" />
+
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Click="Sair" Text="Sair" />
+            </shell:ApplicationBar.MenuItems>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
+    
